@@ -1,0 +1,61 @@
+package clase14sep;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Diana Morales Fragoso
+ */
+public class pila {
+    public void abc(){
+        Scanner sc = new Scanner(System.in);
+        
+        int opt = 0, tope = 0;
+        char [] pila = 
+        {'a','b','c','d','e','f','g','h','i','j','k','l','m',
+            'n','ñ','o','p','q','r','s','t','u','v','w','x','y','z'};
+                
+        do{
+            System.out.println("1.- llena \n"
+            + "2.- muestra \n"
+            + "3.- eliminr \n"
+            + "4.- salir \n");
+            
+            switch (opt = sc.nextInt()) {
+                
+                case 1:
+                    if(tope<27){
+                        System.out.println("espacios disponibles llenos\n");
+                        tope=27;
+                    }else{
+                        System.out.println("pila llena");
+                    }
+                    break;
+                    
+                case 2:
+                    //verificamos que por lo menos haya un dato en la pila que se pueda mostrar.
+                    if(tope>0){
+                        //bucle que muestra el contenido en la pila
+                        //realiza el ciclo desde el valor que tiene "tope"
+                        for(int i = tope-1; i>=0; i--){
+                        System.out.println(" " + pila[i]);
+                        }
+                    } else {
+                        System.out.println("Pila sin elementos");
+                    }
+                    break;
+                    
+                case 3:
+                    if(tope>0){
+                        System.out.println("Dato eliminado..." + pila[tope-1] + " de la posici+on: " + tope);
+                        tope--;//tope=tope-1;
+                    } else {
+                        System.out.println("Pila vacía");
+                    }
+                    break;
+                    
+            }
+        }while(opt !=4);
+    }
+}
+
+
