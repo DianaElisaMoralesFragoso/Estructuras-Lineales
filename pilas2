@@ -1,0 +1,76 @@
+package clase21sep;
+import java.util.Scanner;
+/**
+ *
+ * @author Diana Morales Fragoso
+ */
+public class Pilanueva {
+    public void abc(){
+        Scanner sc = new Scanner(System.in);
+
+        int opt = 0, lim = 0;
+        char [] abc = 
+        {'a','b','c','d','e','f','g','h','i','j','k','l','m',
+            'n','ñ','o','p','q','r','s','t','u','v','w','x','y','z'};
+
+        do{
+            System.out.println("1.- llena \n"
+            + "2.- muestra \n"
+            + "3.- eliminr \n"
+            + "4.- salir \n");
+
+            switch (opt = sc.nextInt()) {
+
+                case 1:
+                    if(lim<27){
+                        System.out.println("espacios disponibles llenos\n");
+                        lim=27;
+                    }else{
+                        System.out.println("pila llena");
+                    }
+                    break;
+
+                case 2:
+                    //verificamos que por lo menos haya un dato en la pila que se pueda mostrar.
+                     if(lim>0){
+                        //bucle que muestra el contenido en la pila
+                        //realiza el ciclo desde el valor que tiene "tope"
+                        for(int i = lim-1; i>=0; i--){
+                        System.out.println(abc[(int) (Math.random() * (26))]);
+                        }
+                    } else {
+                        System.out.println("Pila sin elementos");
+                    }
+                    break;
+
+                case 3:
+                    if(lim>0){
+                        System.out.println("Dato eliminado..." + abc[lim-1] + " de la posici+on: " + lim);
+                        lim--;//tope=tope-1;
+                    } else {
+                        System.out.println("Pila vacía");
+                    }
+                    break;
+
+            }
+        }while(opt !=4);
+    }
+}
+[0:08]
+package clase21sep;
+
+/
+ *
+ * @author Diana Morales Fragoso
+ */
+public class Clase21sep {
+
+    /
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Pilanueva ven=new Pilanueva();
+        ven.abc();
+    }
+
+}
