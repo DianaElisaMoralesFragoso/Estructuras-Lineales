@@ -1,0 +1,45 @@
+package clase11Nov;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Diana Morales Fragoso
+ */
+public class Clase11Nov {
+
+    /**
+     * @param args the command line arguments
+     */
+     public static void main(String[] args) {
+        Lista R=new Lista();
+        Scanner esc=new Scanner(System.in);
+        int opt=0;
+        do{
+            System.out.println("\n1 mostrar"
+            + "\n2 agregar"
+            + "\n3 eliminar"
+            + "\n4 salir");
+            
+            switch(opt=esc.nextInt()){
+                
+                case 1:
+                    R.mostrar();
+                    break;
+                    
+                case 2:
+                    System.out.println("Ingrese dato que desea agregar");
+                    //esc.nextLine();
+                    R.agregar(esc.nextLine());
+                    break;
+                    
+                case 3:
+                    R.eliminar();
+                        //System.out.println("Nodo eliminado");
+                    break;
+                    
+            }
+            
+        }while(opt!=4);
+    }
+    
+}
