@@ -1,0 +1,28 @@
+package menu;
+public class menu {
+
+public static void main(String[] args) { // TODO code application logic here
+}
+int op, x;
+Scanner entrada = new Scanner(System.in); nodo = new nodo();
+do {
+System.out.println("[1] agregar nodo"); System.out.println("[2] eliminar nodo"); System.out.println("[3] Mostrar"); System.out.println("[4] Salir");
+
+op = entrada.nextInt(); switch (op) {
+clase 1:
+System.out.print(" Ingrese numero : "); x = entrada.nextInt();
+nodo.nodo(x);
+break;
+clase 2:
+if (!nodo.esVacia()) {
+x = nodo.nodo();
+System.out.println("Dato eliminado : " + x); } else {
+System.out.println(" vacio"); }
+break;
+clase 3:
+System.out.println(" mostrar nodos"); nodo.mostrar();
+break;
+}
+} while (op != 4);
+}
+ }
